@@ -4,11 +4,6 @@ Projeto 07 de Desenvolvimento Web III. Aplicação web para gerenciar o acervo d
 
 Tecnologias: Node.js, NPM, HTML, CSS e JavaScript puro (sem frameworks e sem dependências externas).
 
-## Integrantes
-
-- Nome do aluno 1
-- Nome do aluno 2
-
 ## Requisitos
 
 - Node.js 18 ou superior
@@ -22,9 +17,7 @@ npm install
 npm start
 ```
 
-Acesse: http://localhost:5000
-
-Para usar outra porta: `PORT=3000 npm start` (Windows PowerShell: `$env:PORT=3000; npm start`).
+Acesse: http://localhost:3000
 
 ## Funcionalidades
 
