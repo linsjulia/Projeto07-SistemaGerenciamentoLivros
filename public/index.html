@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Livros</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <h1 class="brand">📚 Acervo de Livros</h1>
+        <p class="subtitle">Organize seu acervo, consulte informações e acompanhe a situação de leitura.</p>
+    </div>
+</header>
+
+<main>
+    <div id="mensagem" class="mensagem" role="status" aria-live="polite" hidden></div>
+
+    <section class="card" id="cadastro">
+        <h2 id="tituloFormulario">Cadastrar livro</h2>
+
+        <form id="formLivro" novalidate>
+            <input type="hidden" id="livroId">
+            <input type="hidden" id="capa">
+
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label for="titulo">Título *</label>
+                    <div class="linha">
+                        <input type="text" id="titulo" placeholder="Digite o título e busque na Open Library">
+                        <button type="button" id="btnBuscarApi" class="btn secundario">Buscar na Open Library</button>
+                    </div>
+                    <small class="help">A busca é opcional: se a API estiver indisponível, preencha manualmente.</small>
+                </div>
+
+                <div id="resultadosApi" class="resultados-api full" hidden></div>
+
+                <div class="form-group">
+                    <label for="autor">Autor *</label>
+                    <input type="text" id="autor">
+                </div>
+
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" id="isbn" placeholder="10 ou 13 dígitos">
+                </div>
+
+                <div class="form-group">
+                    <label for="ano">Ano de publicação *</label>
+                    <input type="number" id="ano" min="1" step="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Gênero literário *</label>
+                    <input type="text" id="genero" list="generos" placeholder="Ex.: Romance">
+                    <datalist id="generos">
+                        <option value="Romance"></option>
+                        <option value="Ficção científica"></option>
+                        <option value="Fantasia"></option>
+                        <option value="Suspense"></option>
+                        <option value="Terror"></option>
+                        <option value="Biografia"></option>
+                        <option value="História"></option>
+                        <option value="Poesia"></option>
+                        <option value="Técnico"></option>
+                        <option value="Autoajuda"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status *</label>
+                    <select id="status">
+                        <option value="">Selecione</option>
+                        <option value="Quero ler">Quero ler</option>
+                        <option value="Lendo">Lendo</option>
+                        <option value="Concluído">Concluído</option>
+                    </select>
+                </div>
+
+                <div class="form-group capa-preview" id="capaPreview" hidden>
+                    <label>Capa</label>
+                    <img id="capaImg" alt="Capa do livro">
+                    <button type="button" id="btnRemoverCapa" class="btn link">Remover capa</button>
+                </div>
+            </div>
+
+            <div class="acoes">
+                <button type="submit" id="btnSalvar" class="btn primario">Cadastrar</button>
+                <button type="button" id="btnCancelar" class="btn secundario" hidden>Cancelar edição</button>
+                <button type="button" id="btnLimpar" class="btn secundario">Limpar</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="card" id="acervo">
+        <div class="cabecalho-lista">
+            <h2>Livros cadastrados <span id="contador" class="contador"></span></h2>
+            <input type="search" id="pesquisa" placeholder="Pesquisar por título..." aria-label="Pesquisar por título">
+        </div>
+
+        <div id="lista" class="lista"></div>
+    </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "Noites Brancas",
+      "autor": "Фёдор Михайлович Достоевский",
+      "isbn": "9798551347194",
+      "ano": 2020,
+      "genero": "Romance",
+      "status": "Quero ler",
+      "capa": "https://covers.openlibrary.org/b/id/15116477-M.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "O Cortiço",
+      "autor": "Azevedo, Aluizio",
+      "isbn": "9781520753980",
+      "ano": 1925,
+      "genero": "Fiction",
+      "status": "Quero ler",
+      "capa": "https://covers.openlibrary.org/b/id/13938346-M.jpg"
+    }
+  ],
+  "proximoId": 3
+}
